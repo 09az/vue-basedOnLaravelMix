@@ -1,16 +1,8 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-
-Vue.use(Router)
-
-const routes = [
+//定义路由
+export default[
   {
     path: '/',
     name: 'HelloWorld',
-    component: {template :"<table></table>"}
+    component: require('./components/Test.vue')
   }
 ]
-
-export default new Router({
-  routes: routes
-})

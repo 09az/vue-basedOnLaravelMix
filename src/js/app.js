@@ -9,8 +9,18 @@
 
 window.Vue = require('vue');
 
+import VueResource from 'vue-resource';
+Vue.use(VueResource);
+
+import VueRouter from 'vue-router';
+Vue.use(VueRouter);
+
 //使用vue-router
-import router from './router'
+import routes from './router'
+
+const router = new VueRouter({
+  routes
+});
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
