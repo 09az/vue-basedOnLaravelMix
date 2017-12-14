@@ -2,6 +2,5 @@
 dist
 node_modules
 fonts
-package-lock.json
 mix-manifest.json
 .DS_Store
