@@ -9,10 +9,10 @@
     import ExampleComponent from './ExampleComponent'
 
     export default {
-      mounted() {
-        console.log('Component mounted.')
-      },
-      components: {ExampleComponent}
+        mounted() {
+            console.log('Component mounted.')
+        },
+        components: {ExampleComponent}
     }
 </script>
 

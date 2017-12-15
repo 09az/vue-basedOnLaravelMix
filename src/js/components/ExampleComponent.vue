@@ -19,16 +19,16 @@
     import test from './Test'
 
     export default {
-      mounted() {
-        console.log('Component mounted.')
-      },
-      components: {test}
+        mounted() {
+            console.log('Component mounted.')
+        },
+        components: {test}
     }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-    .panel-body{
+    .panel-body {
         border: 3px solid black;
     }
 </style>
