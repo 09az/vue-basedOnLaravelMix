@@ -3,6 +3,6 @@ export default[
   {
     path: '/',
     name: 'HelloWorld',
-    component: require('./components/Test.vue')
+    component: require('../components/Test.vue')
   }
 ]
