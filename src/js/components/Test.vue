@@ -15,14 +15,15 @@
 </template>
 
 <script>
-    //引入文件
-    import * as api from '../api'
+    //引入Api文件
+   // import * as Api from '../api'
+   let {getAllMessages} = require('../api')
 
     export default {
         name: 'test',
         mounted() {
             //调用接口
-            api.getAllMessages(data => {
+            getAllMessages(data => {
                 console.log(data)
             })
 //            console.log('Component mounted.')
