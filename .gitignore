@@ -2,6 +2,9 @@
 dist
 node_modules
 fonts
+css
+js
+images
 package-lock.json
 mix-manifest.json
 .DS_Store
