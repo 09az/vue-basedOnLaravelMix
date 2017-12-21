@@ -1,18 +1,18 @@
 <template>
     <div id="app">
         <router-view/>
-        <ExampleComponent/>
+        <FooterComponent/>
     </div>
 </template>
 
 <script>
-    import ExampleComponent from './ExampleComponent'
+    import FooterComponent from './FooterComponent.vue'
 
     export default {
         mounted() {
             console.log('Component mounted.')
         },
-        components: {ExampleComponent}
+        components: {FooterComponent}
     }
 </script>
 

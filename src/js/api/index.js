@@ -4,7 +4,22 @@
  */
 
 const data = require('./mock-data')
-const LATENCY = 16
+
+let host = 'http://h5.yxxy.tv';
+if (process.env.NODE_ENV=='development') {
+    host = 'http://testh5.yxxy.tv';
+}
+
+let api_url = {
+    'home_index': host+'/home/index',
+};
+
+/**
+ * 获取首页接口的数据
+ */
+export function getIndexData(fn) {
+    Vue.http.post(api_url.home_index).then(fn(data))
+}
 
 export function getAllMessages(cb) {
 
