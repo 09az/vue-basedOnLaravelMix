@@ -5,9 +5,9 @@
 
 const data = require('./mock-data')
 
-let host = 'http://h5.yxxy.tv';
+let host = 'http://h5.yxxy.tv'
 if (process.env.NODE_ENV=='development') {
-    host = 'http://testh5.yxxy.tv';
+    host = 'http://testh5.yxxy.tv'
 }
 
 let api_url = {
