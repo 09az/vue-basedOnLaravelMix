@@ -1,9 +1,10 @@
+import indexPage from '../components/IndexPage'
 //定义路由
 export default [
     {
         path: '/',
         name: 'index',
-        component: require('../components/IndexPage.vue')
+        component: indexPage
     },
     {
         path: '/my',

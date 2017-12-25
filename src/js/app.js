@@ -7,7 +7,8 @@
 
 // require('./bootstrap');
 
-window.Vue = require('vue');
+// window.Vue = require('vue');
+import Vue from 'vue';
 
 import VueResource from 'vue-resource';
 Vue.use(VueResource);
