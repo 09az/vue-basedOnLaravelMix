@@ -7,9 +7,10 @@
 
 // require('./bootstrap');
 
-// window.Vue = require('vue');
-import Vue from 'vue';
+window.Vue = require('vue');
+// import Vue from 'vue';
 
+//
 import VueResource from 'vue-resource';
 Vue.use(VueResource);
 
@@ -29,7 +30,7 @@ const router = new VueRouter({
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('App', require('./components/App.vue'));
+Vue.component('App', require('./components/App'));
 
 const app = new Vue({
     el: '#app',
