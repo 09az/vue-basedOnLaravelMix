@@ -7,13 +7,14 @@
 
 <script>
     import FooterComponent from './Footer'
-    import Util from '../api/util'
+    import cookie from 'cookie'
     import Config from '../config'
 
     export default {
         created(){
-            if (Util.checkLogin()){
-                console.log(Util.getCookie('zd_h5_auth'));
+            let cookies = cookie.parse(document.cookie);
+            if (cookies.zd_h5_key && cookies.zd_h5_auth){
+                console.log(cookies);
             }else {
                 location.href = Config.base_url + '/user/wechat-login';
                 console.log('没登录')
