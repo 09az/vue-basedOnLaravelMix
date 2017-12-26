@@ -16,7 +16,8 @@
 
 <script>
     //引入Api文件
-   // import * as Api from '../api'
+   import FooterComponent from './FooterComponent.vue'
+
    let {getIndexData} = require('../api')
 
     export default {
@@ -27,6 +28,7 @@
                 console.log(data)
             })
 //            console.log('Component mounted.')
-        }
+        },
+      components:{FooterComponent}
     }
 </script>
