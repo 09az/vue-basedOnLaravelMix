@@ -2,46 +2,47 @@
 <template>
   <div class="navBanner">
     <p class="f3">热门案例</p>
-    <div class="swiper-container swiper-container-horizontal">
+    <div class="swiper-container">
+
       <div class="swiper-wrapper">
 
-        <div class="swiper-slide swiper-slide-active" style="margin-right: 10px;">
-          <div class="tag_box"><span class="banner_tag f1 region" data-id="undefined" style="background-color:#1abc9c">新疆乌鲁木齐</span><span
-              class="banner_tag f1 industry" data-id="undefined" style="background-color:#2ecc71">批发、零售、贸易</span></div>
-          <img data-num="59f29f81d77ee" class="swiper-lazy swiper-lazy-loaded"
-               src="http://teststatic.yxxy.tv/course/course/201710/1509076394.jpg"></div>
-        <div class="swiper-slide swiper-slide-next" style="margin-right: 10px;">
-          <div class="tag_box"></div>
-          <img data-num="59ba1d9d5ae12" class="swiper-lazy swiper-lazy-loaded"
-               src="http://testpic.yxxy.tv/course/course/1505369253.jpg"></div>
-        <div class="swiper-slide" style="margin-right: 10px;">
-          <div class="tag_box"><span class="banner_tag f1 region" data-id="undefined" style="background-color:#1abc9c">山西大同</span><span
-              class="banner_tag f1 industry" data-id="undefined" style="background-color:#2ecc71">广告、媒体</span></div>
-          <img data-src="http://pic.yxxy.tv/course/course/1504174752.png" data-num="59a7d82b342e7" class="swiper-lazy">
-          <div class="swiper-lazy-preloader"></div>
-        </div>
-        <div class="swiper-slide" style="margin-right: 10px;">
-          <div class="tag_box"><span class="banner_tag f1 region" data-id="undefined" style="background-color:#1abc9c">广东广州</span><span
-              class="banner_tag f1 industry" data-id="undefined" style="background-color:#2ecc71">制药、医疗</span></div>
-          <img data-src="http://teststatic.yxxy.tv/course/course/201712/1513672853.jpg" data-num="59897cef94842"
-               class="swiper-lazy">
-          <div class="swiper-lazy-preloader"></div>
-        </div>
-        <div class="swiper-slide" style="margin-right: 10px;">
-          <div class="tag_box"><span class="banner_tag f1 region" data-id="undefined" style="background-color:#1abc9c">北京</span><span
-              class="banner_tag f1 industry" data-id="undefined" style="background-color:#2ecc71">广告、媒体</span></div>
-          <img data-src="http://teststatic.yxxy.tv/course/course/201712/1513740175.png" data-num="59ddd769500f2"
-               class="swiper-lazy">
-          <div class="swiper-lazy-preloader"></div>
-        </div>
-      </div>
+        <div class="swiper-slide" v-for="course in hotCase">
 
+          <div class="tag_box">
+            <template v-for="tag in course.tag_list">
+              <span v-if="tag.type == 6" class="banner_tag f1 region" :data-id="tag.tag_id"> {{ tag.name }} </span>
+              <span v-else-if="tag.type == 5" class="banner_tag f1 industry" :data-id="tag.tag_id"> {{ tag.name }} </span>
+              <span v-else class="banner_tag f1 otherTag" :data-id="tag.tag_id"> {{ tag.name }} </span>
+            </template>
+          </div>
+          <img :data-num="course.course_number" class="swiper-lazy" :src="course.face">
+          <div class="swiper-lazy-preloader"></div>
+        </div>
+
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-  export default {}
+  import 'swiper/dist/css/swiper.min.css';
+  import Swiper from 'swiper';
+
+  export default {
+    props:['hotCase'],
+    mounted(){
+      new Swiper ('.navBanner .swiper-container', {
+        lazy: {
+          lazy:true
+        },
+        autoplay:{
+          autoplay:true
+        },
+        direction: 'horizontal',
+        loop: true,
+      });
+    }
+  }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -21,10 +21,7 @@
         "vue-router": "^3.0.1"
     },
     "dependencies": {
-<<<<<<< HEAD
-        "swiper": "^4.0.7"
-=======
+        "swiper": "^4.0.7",
         "cookie": "^0.3.1"
->>>>>>> 12104a25e4e463d6bdeb092f3eda7b67e3538f54
     }
 }

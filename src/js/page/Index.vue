@@ -19,12 +19,12 @@
             <calendar></calendar>
             <div class="clear"></div>
             <!--专辑列表-->
-            <albums></albums>
+            <albums :albums="albums"></albums>
             <div class="clear"></div>
             <!--专辑合集-->
             <album-collect></album-collect>
             <!--热门案例-->
-            <hot-case></hot-case>
+            <hot-case :hot-case="hotCase"></hot-case>
             <!--最新案例-->
             <new-case></new-case>
 
@@ -50,10 +50,10 @@
     data() {
       return {
         bannerList:[],
-        hotCourse:[],
+        hotCase:[],
         newBgCourse:[],
         newIpoCourse:[],
-        recAlbum:[],
+        albums:[],
         topicList:[],
         zdrl:[]
       }
@@ -63,10 +63,10 @@
       this.$http.get(config.base_url + '/home/index').then(data => {
         let _data = data.body.data;
         this.bannerList  = _data.banner_list;
-        this.hotCourse = _data.hot_course;
+        this.hotCase = _data.hot_course;
         this.newIpoCourse = _data.new_ipo_course;
         this.newBgCourse = _data.new_bg_course;
-        this.recAlbum = _data.rec_album;
+        this.albums = _data.rec_album;
         this.topicList = _data.topicList;
         this.zdrl = _data.zdrl;
       })
