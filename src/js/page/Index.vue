@@ -16,7 +16,7 @@
                 <!-- E 搜索栏 -->
             </div>
             <!--日历-->
-            <calendar></calendar>
+            <calendar :calendar="calendar"></calendar>
             <div class="clear"></div>
             <!--专辑列表-->
             <albums :albums="albums"></albums>
@@ -55,7 +55,7 @@
         newIpoCourse:[],
         albums:[],
         topicList:[],
-        zdrl:[]
+        calendar:[]
       }
     },
     name: 'index',
@@ -68,7 +68,7 @@
         this.newBgCourse = _data.new_bg_course;
         this.albums = _data.rec_album;
         this.topicList = _data.topicList;
-        this.zdrl = _data.zdrl;
+        this.calendar = _data.zdrl;
       })
     },
     components: {FooterComponent, Banner, Calendar, Albums, AlbumCollect, HotCase, NewCase}
