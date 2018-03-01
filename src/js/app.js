@@ -5,12 +5,12 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-// require('./bootstrap');
+require('./bootstrap');
 
 window.Vue = require('vue');
 
-import VueResource from 'vue-resource';
-Vue.use(VueResource);
+// import VueResource from 'vue-resource';
+// Vue.use(VueResource);
 
 import VueRouter from 'vue-router';
 Vue.use(VueRouter);
@@ -35,3 +35,5 @@ const app = new Vue({
     router,
     template:'<App/>'
 });
+
+// window.app = app;
